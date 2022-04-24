@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIRANAPLAKES</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="responsive.css" />
+  </head>
+
+  <header>
+    <div class="container">
+      <div class="header-left">
+      </div>
+      <span class="fa fa-bars menu-icon"></span>
+      <div class="header-right">
+        <a href="404.html">About us</a>
+        <a href="index.html" class="login">Log in</a>
+        <a href="404.html">Contact</a>
+      </div>
+    </div>
+  </header>
+  <div class="top-wrapper">
+    <div class="container">
+      <img src="images/siranaplakes.png" style="width: 200px;px;height:200px;" aligh="middle">
+      <p>Input Kamar Kosong</p>
+      <form action="koneksi.php" method="get">
+        <br />
+        <label for="fname">Nama Kelas Rawat:</label>  <br />
+        <input type="text" id="fname" name="fname" /> <br /><br />
+        <label for="lname">Nomor Kamar:</label><br />
+        <input type="text" id="lname" name="lname" /><br /><br />
+        <label for="lname">Bed Kosong:</label><br />
+        <input type="text" id="hname" name="hname" /><br /><br />
+        <input type="submit" value="Submit" />
+        <input type="reset" />
+      </form>
+
+      </div>
+      <div class="btn-wrapper">
+      <div class="box1">
+        <script>
+          function startTime() {
+              var today=new Date();
+              var h=today.getHours();
+              var m=today.getMinutes();
+              var s=today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('jam').innerHTML = h+":"+m+":"+s;
+              var t = setTimeout(function(){startTime()},500);
+          }
+          function checkTime(i) {
+              if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+          }
+        </script>
+
+        <body onload="startTime()">
+        <center><br />
+        Jam Digital Real Time
+        <div id="jam"></div>
+        <div <?= "time" > </div>
+        </center> <br /> <br /> <br />
+      </div>
+    </div>
+  </div>
+
+  <body></body>
+</html>
+
