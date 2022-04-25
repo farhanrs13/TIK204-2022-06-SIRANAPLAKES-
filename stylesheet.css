@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lucida Grande";
+  background-color: #d8e9a8;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: left;
+}
+
+.container {
+  font-size: 25px;
+  max-width: auto;
+  padding: 0 20px;
+  margin: 0px;
+  text-align: center;
+
+}
+
+.top-wrapper {
+  padding: 80px 0 0px 0px;
+  background-color: #d8e9a8;
+  background-size: cover;
+  color: #1e5128;
+  text-align: center;
+}
+
+.top-wrapper1 {
+  float: left;
+  line-height: 40px;
+  background-color: #d8e9a8;
+  color: #1e5128;
+  font-family: "Square721 BT", sans-serif;
+}
+
+
+.top-wrapper h1 {
+  opacity: 0.7;
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.top-wrapper p {
+  opacity: 0.7;
+  margin-bottom: 1px;
+  font-size: 35px;
+  font-stretch: extra-condensed;
+  padding: auto 0 0 50px;
+  color: #191a19;
+}
+
+.top-wrapper b {
+  opacity: 0.7;
+  margin-bottom: 1px;
+  font-size: 45px;
+  font-stretch: extra-condensed;
+  padding:auto 0 0 50px;
+  color: #0e120e;
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-wrapper p {
+  margin: 10px 0;
+}
+
+.header {
+  height: 80px ;
+  width: 100% ;
+  background-color: #d8e9a8;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  float: left;
+  line-height: 40px;
+  background-color: #d8e9a8;
+  color: #1e5128;
+  font-family: "Square721 BT", sans-serif;
+}
+
+.header-right {
+  float: right;
+  margin-right: 15px;
+}
+
+.header-right a {
+  line-height: 50px;
+  padding: 0 25px;
+  color: #4e9f3d;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: #d8e9a8;
+}
+
+
+.letak {
+  background-color: #d8e9a8;
+  padding: 50px 10px 200px 0px;
+  background-size: cover;
+  color: #031006;
+  text-align: justify;
+
+}
+.letak b{
+  font-size: 20px;
+}
+.hasil {
+  display: inline-block;
+  text-decoration:underline;
+  padding: 15px 50px 15px;
+  font-size: 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #31C1FF;
+  border: none;
+  border-radius: 15px;
+  margin: 20px auto;
+  font-family: 'Lato';
+  font-weight: 300;
+  width: 600px;
+  text-align: center;
+}
+
+.box1 {
+  width: 200px;
+  height: 90px;
+  background: #4e9f3d;
+  border: solid 3px black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: #d8e9a8;
+}
+/* Untuk css tombol button */
+.button {
+  display: inline-block;
+  padding: 3px 10px 15px;
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.third {
+  background: #F1D676;
+  color: rgb(1, 1, 1);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Lato';
+  margin: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+.button:hover {
+  background: orange;
+}
+.button1:active {
+  background-color: #FFA928;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.main {
+  margin:auto;
+  background-color: #ffffff;
+  border-bottom-color: #fff;
+}
+
+.st0 {
+  fill: #fff;
+}
+.st2 {
+  fill: #5d89af;
+}
+.st3 {
+  fill: #709abf;
+}
+.st4,
+.st6 {
+  fill: #fff;
+  stroke: #b3dcdf;
+  stroke-miterlimit: 10;
+}
+.st6 {
+  stroke: #0b2439;
+  stroke-width: 2;
+}
+.st7,
+.st8,
+.st9 {
+  stroke: #709abf;
+  stroke-miterlimit: 10;
+}
+
+.st7 {
+  stroke-width: 5;
+  stroke-linecap: round;
+  fill: none;
+}
+.st8,
+.st9 {
+  fill: #fff;
+}
+.st9 {
+  fill: none;
+}
+.st10 {
+}
+
+#cloud1 {
+  animation: cloud003 15s linear infinite;
+}
+
+#cloud2 {
+  animation: cloud002 25s linear infinite;
+}
+
+#cloud3 {
+  animation: cloud003 20s linear infinite;
+}
+
+#cloud4 {
+  animation: float 4s linear infinite;
+}
+
+#cloud5 {
+  animation: float 8s linear infinite;
+}
+
+#cloud7 {
+  animation: float 5s linear infinite;
+}
+
+#tracks {
+  animation: slide 650ms linear infinite;
+}
+
+#bumps {
+  animation: land 10000ms linear infinite;
+}
+
