@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lucida Grande";
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: left;
+}
+
+.container {
+  font-size: 25px;
+  max-width: auto;
+  padding: 0 15px;
+  margin: 0px;
+  text-align: center;
+}
+
+.top-wrapper {
+  padding: 80px 0 100px 50px;
+  background-color: #d8e9a8;
+  background-size: cover;
+  color: #1e5128;
+  text-align: center;
+}
+
+.top-wrapper h1 {
+  opacity: 0.7;
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.top-wrapper p {
+  opacity: 0.7;
+  margin-bottom: 3px;
+  font-size: 35px;
+  font-stretch: extra-condensed;
+  padding: auto 0 0 50px;
+  color: #191a19;
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-wrapper p {
+  margin: 10px 0;
+}
+
+header {
+  height: 80px ;
+  width: 100% ;
+  background-color: #d8e9a8;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  float: left;
+  line-height: 40px;
+  color: #1e5128;
+  font-family: "Square721 BT", sans-serif;
+}
+
+.header-right {
+  float: right;
+  margin-right: 15px;
+}
+
+.header-right a {
+  line-height: 50px;
+  padding: 0 25px;
+  color: #4e9f3d;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: #d8e9a8;
+}
+
+.box1 {
+  width: 200px;
+  height: 90px;
+  background: #4e9f3d;
+  border: solid 3px black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: #d8e9a8;
+}
+
+.main {
+  margin-top: 15%;
+}
+
+.st0 {
+  fill: #fff;
+}
+.st2 {
+  fill: #5d89af;
+}
+.st3 {
+  fill: #709abf;
+}
+.st4,
+.st6 {
+  fill: #fff;
+  stroke: #b3dcdf;
+  stroke-miterlimit: 10;
+}
+.st6 {
+  stroke: #0b2439;
+  stroke-width: 2;
+}
+.st7,
+.st8,
+.st9 {
+  stroke: #709abf;
+  stroke-miterlimit: 10;
+}
+
+.st7 {
+  stroke-width: 5;
+  stroke-linecap: round;
+  fill: none;
+}
+.st8,
+.st9 {
+  fill: #fff;
+}
+.st9 {
+  fill: none;
+}
+.st10 {
+}
+
+#cloud1 {
+  animation: cloud003 15s linear infinite;
+}
+
+#cloud2 {
+  animation: cloud002 25s linear infinite;
+}
+
+#cloud3 {
+  animation: cloud003 20s linear infinite;
+}
+
+#cloud4 {
+  animation: float 4s linear infinite;
+}
+
+#cloud5 {
+  animation: float 8s linear infinite;
+}
+
+#cloud7 {
+  animation: float 5s linear infinite;
+}
+
+#tracks {
+  animation: slide 650ms linear infinite;
+}
+
+#bumps {
+  animation: land 10000ms linear infinite;
+}
+
