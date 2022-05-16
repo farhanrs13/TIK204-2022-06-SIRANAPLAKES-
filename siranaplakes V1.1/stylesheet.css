@@ -188,13 +188,14 @@ a {
   border: solid 3px black;
   display: block;
   margin-left: auto;
+  margin-top: 20px;
   margin-right: auto;
   text-shadow: #d8e9a8;
 }
 /* Untuk css tombol button */
 .button {
   display: inline-block;
-  padding: 3px 10px 15px;
+  padding: 3px 10px 12px;
   font-size: 25px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   cursor: pointer;
@@ -204,14 +205,18 @@ a {
   color: #fff;
   background-color: #4CAF50;
   border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+  border-radius: 12px;
+  box-shadow: 0 7px #999;
 }
 
 .klik :hover {
     transition-duration: 0.4s;
     background-color: #4CAF50; /* Green */
     color: white;
+}
+.float-right {
+  float: right;
+  width: 20px;
 }
 
 .third {
@@ -220,7 +225,7 @@ a {
   color: rgb(1, 1, 1);
   border: none;
   text-decoration: none;
-  padding: 10px;
+  padding: 5px;
   border-radius: 8px;
   font-family: 'Lato';
   margin: 5px;

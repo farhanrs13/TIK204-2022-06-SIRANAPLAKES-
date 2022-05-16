@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('User Berhasil Ditambahkan. SILAHKAN MASUK!!');
-        document.location.href = 'index.php';
+        document.location.href = 'halaman_perawat.php';
         </script>
         "; 
     } else {
@@ -15,25 +15,34 @@ if (isset($_POST["submit"])) {
         alert('User Gagal Ditambahkan!!');
         </script>
         ";
-     }
+    }
 
 }
 
 if (isset($_POST["masuk"])) { 
     $username = $_POST["emailsignup"];
-    $nik=$_POST["nik"];
     $password = $_POST["passwordsignup"];
 
-    $result = mysqli_query($db, "SELECT * FROM signup_data WHERE username='$emailsignup'");
+    $result = mysqli_query($db, "SELECT * FROM signup_data WHERE
+    username='$emailsignup'");
     
     //cek username
-    if (mysqli_num_rows($result)===1) {
+    if (mysqli_num_rows($result) == 1 ) {
+        //cek pasword
         $row = mysqli_fetch_assoc($result);
-        if( password_verify($password, $row["passwordsignup"])) {
-            header("location: halaman_perawat.php");
+        if( password_verify($password, $row["password"])) {
+            header("location: update_kamar.php");
             exit;
         }
     }
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['username'] = $row['username'];
+        header("Location: berhasil_login.php");
+    } else {
+        echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+    }
+
 
 
 
@@ -81,7 +90,7 @@ if (isset($_POST["masuk"])) {
                             <form  action="" method="post">
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="username" class="uname"  > Your Email or NIK </label>
+                                    <label for="username" class="uname"  > Your Email </label>
                                     <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
                                 </p>
                                 <p> 
@@ -93,7 +102,7 @@ if (isset($_POST["masuk"])) {
 									<label for="loginkeeping">Keep me logged in</label>
 								</p>
                                 <p class="login button">
-                                    <input type="submit" nama="masuk" value="Login" /> 
+                                    <input type="submit" id="masuk" nama="masuk" value="Login" /> 
 								</p> 
                                 <p class="change_link">
 									Belom Memiliki Akun ?
@@ -129,7 +138,7 @@ if (isset($_POST["masuk"])) {
 								</p>
                                 <p class="change_link">  
 									Sudah Mempunyai Akun ?
-									<a href="#tologin" class="to_register"> Go and log in </a>
+									<a href="login.php" class="to_register"> Go and log in </a>
 								</p>
                             </form>
                         </div>

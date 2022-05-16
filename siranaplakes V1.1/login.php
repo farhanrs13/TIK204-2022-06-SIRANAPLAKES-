@@ -1,18 +1,19 @@
 <?php
 require 'functions.php';
 
-
 if (isset($_POST["masuk"])) { 
     $username = $_POST["emailsignup"];
     $password = $_POST["passwordsignup"];
 
-    $result = mysqli_query($db, "SELECT * FROM signup_data WHERE username='$emailsignup'");
-        
+    $result = mysqli_query($db, "SELECT * FROM signup_data WHERE
+    username='$emailsignup'");
+    
     //cek username
-    if (mysqli_num_rows($result)==1) {
+    if (mysqli_num_rows($result) === 1 ) {
+        //cek pasword
         $row = mysqli_fetch_assoc($result);
-        if( password_verify($password, $row["passwordsignup"])) {
-            header("location: halaman_perawat.php");
+        if( password_verify($password, $row["password"])) {
+            header("location: update_kamar.php");
             exit;
         }
     }
@@ -48,7 +49,7 @@ if (isset($_POST["masuk"])) {
                 <div class="clr"></div>
             </div>
             <header>
-                <h1>Login Account Admin</h1>
+                <h1>Login and Registration</h1>
                 <span>SIRANAPLAKES</span>
 				<nav class="codrops-demos">
 					<span><strong>Sistem Informasi Ruang Rawat Inap Layanan Kesehatan</strong></span>
@@ -56,18 +57,19 @@ if (isset($_POST["masuk"])) {
             </header>
             <section>				
                 <div id="container_demo" >
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
+                    <!-- <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a> -->
                     <div id="wrapper">
+                        
                         <div id="login" class="animate form">
-                            <form  action="halaman_perawat.php" method="post">
+                            <form  action="" method="post">
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="username" class="uname"  > Join Account Rumah Sakit </label>
+                                    <label for="username" class="uname"  > Your Email or NIK </label>
                                     <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd" >  password </label>
+                                    <label for="password" class="youpasswd" > Your password </label>
                                     <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
                                 </p>
                                 <p class="keeplogin"> 
@@ -76,14 +78,18 @@ if (isset($_POST["masuk"])) {
 								</p>
                                 <p class="login button">
                                     <input type="submit" nama="masuk" value="Login" /> 
+								</p> 
+                                <p class="change_link">
+									Belom Memiliki Akun ?
+									<a href="index.php" class="to_register">Join us</a>
 								</p>
-                                
                             </form>
                         </div>
-                        
+						
                     </div>
                 </div>  
             </section>
+            
         </div>
     </body>
 </html>

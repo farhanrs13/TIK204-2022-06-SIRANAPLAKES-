@@ -1,5 +1,6 @@
 <?php
 require 'functions.php';
+require 'time.js';
 if (isset($_POST["submit"])) { 
 
     if( tambahan ($_POST) > 0 ) {
@@ -13,11 +14,11 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('data gagal ditambah!');
-        document.location.href = 'update_kamar.php';
+        document.location.href = 'halaman_perawat.php';
         </script>
         "; 
     }
-
+    return [true];
 }
 ?>
 
@@ -28,19 +29,18 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <title>SIRANAPLAKES</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="responsive.css" />
-    
     <link rel="icon" href="images/siranaplakes.png" type="image/png"/>
   </head>
   <header>
-        <!-- header inner -->
-        <div class="header">
+        <div class="header" style=" box-shadow: 0 1px #999;">
             <div class="container">
               <div class="row">
-                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                     <div class="full">
                     <body>
                         <div class="container">
@@ -51,60 +51,44 @@ if (isset($_POST["submit"])) {
                                 <a href="404.html">Contact</a>
                               </div>
                               <div class="top-wrapper">
-                              <img src="images/siranaplakes.png"style="width: 150px;px;height:150px; float: left;" aligh="middle" alt="#" >
+                              <img src="images/siranaplakes.png" style="width: 60px;height:60px; float: left;" aligh="middle" alt="#" >
                               </div>
                         </div>
-                     </body>
-                     </div>
-                  </div>
-                  
-               </div>
+                    </body>
+                    </div>
+              </div>
             </div>
-         </div>
+        </div>
       </header>
+      
   <div class="top-wrapper">
     <div class="container">
+    <div class="col-md-6">
       <form action="" method="post">
-        <br /> <br> <br>
+        <br /> <br> <br><br>
+        <label for="kname">Kelas:</label><br>
+        <input type="text" id="kname"required="required" name="kname" /> <br /><br />
         <label for="fname">Nama Kelas Rawat:</label><br>
         <input type="text" id="fname"required="required" name="fname" /> <br /><br />
         <label for="lname">Jumlah Kamar:</label><br>
         <input type="text" id="lname" required="required" name="lname" /><br /><br />
         <label for="lname">Bed Kosong:</label><br>
         <input type="text" id="hname" required="required" name="hname" /><br /><br />
-        <label for="lname">Info:</label><br>
-        <input type="text" id="info" name="info" /><br /><br />
+        <label for="lname">Info Di Update Jam : <div id="jam" name='jam'></div></label><br>
+        <type="text" id="info" name="info" />
         <input class="klik" type="submit" name="submit" value="Submit" />
         <input class="klik" type="reset" />
       </form>
-
-      </div>
       <div class="btn-wrapper">
       <div class="box1">
-        <script>
-          function startTime() {
-              var today=new Date();
-              var h=today.getHours();
-              var m=today.getMinutes();
-              var s=today.getSeconds();
-              m = checkTime(m);
-              s = checkTime(s);
-              document.getElementById('jam').innerHTML = h+":"+m+":"+s;
-              var t = setTimeout(function(){startTime()},500);
-          }
-          function checkTime(i) {
-              if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
-              return i;
-          }
-        </script>
-
         <body onload="startTime()">
-        <center><br />
-        Jam Digital Real Time
-        <div id="jam"></div>
-        <div <?= "time"?> > </div>
-        </center> <br /> <br /> <br />
+        </body>
+        <br><br>
+
       </div>
+
+    </div>
+    </div>
     </div>
   </div>
 

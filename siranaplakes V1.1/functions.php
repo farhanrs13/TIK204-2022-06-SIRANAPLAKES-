@@ -8,24 +8,23 @@ if (!$db) {
 
 function tambahan ($data) {
     global $db;
+    $kname = htmlspecialchars($data["kname"]);
     $fname = htmlspecialchars($data["fname"]);
     $lname = htmlspecialchars($data["lname"]);
     $hname = htmlspecialchars($data["hname"]);
     $info = htmlspecialchars($data["info"]);
 
-
-    //insert data ke db
-
 //insert data ke db
 
-$query = "INSERT INTO perawat
+$query = "INSERT INTO perawat2
 VALUES
-('$fname', '$lname', '$hname', '$info' )
+('','$kname', '$fname', '$lname', '$hname', '$info' )
 ";
 mysqli_query($db, $query);
 
 return mysqli_affected_rows($db);
 }
+
 
 
 function register ($data) {
@@ -83,6 +82,25 @@ mysqli_query($db, $query);
 return mysqli_affected_rows($db);
 
 }
+
+function logout ($data) {
+    session_start();
+    session_destroy();
+    header("Location: index.php");
+}
+
+function hapus ($id) {
+    global $db;
+    mysqli_query($db, "DELETE id FROM perawat2 WHERE id  = '$id'");
+    return mysqli_affected_rows($db);
+}
+
+
+function cari ($data) {
+    echo "<script> 
+                document.location.href = 'admin_login.php';
+            </script>
+        ";
+}
+
 ?>
-
-
