@@ -3,22 +3,22 @@ require 'functions.php';
 
 
 if (isset($_POST["masuk"])) { 
-    $username = $_POST["emailsignup"];
-    $password = $_POST["passwordsignup"];
+    $emailsignup = $_POST["emailsignup"];
+    $passwordsignup = $_POST["passwordsignup"];
 
-    $result = mysqli_query($db, "SELECT * FROM signup_data WHERE username='$emailsignup'");
-        
-    //cek username
-    if (mysqli_num_rows($result)==1) {
-        $row = mysqli_fetch_assoc($result);
-        if( password_verify($password, $row["passwordsignup"])) {
-            header("location: halaman_perawat.php");
+    $result1 = mysqli_query($db, "SELECT * FROM signup_data WHERE
+    emailsignup = '$emailsignup'");
+    
+    //cek emailsignup
+    if (mysqli_num_rows($result1) === 1 ) {
+        //cek pasword
+        $row = mysqli_fetch_assoc($result1);
+        if( password_verify($passwordsignup, $row["passwordsignup"])) {
+            header("location:halaman_perawat.php");
             exit;
         }
     }
-
-
-
+    $error = true;
 }
 
 ?>
@@ -60,22 +60,25 @@ if (isset($_POST["masuk"])) {
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="halaman_perawat.php" method="post">
-                                <h1>Log in</h1> 
+                        <?php if( isset($error)) : ?>
+                                <p style="color: red; font-style:italic;">Username/password salah</p>
+                            <?php endif; ?>
+                            <form  action="" method="post">
+                                <h1>Admin</h1> 
                                 <p> 
-                                    <label for="username" class="uname"  > Join Account Rumah Sakit </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                    <label for="emailsignup" class="uname"  > Join Account Rumah Sakit </label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd" >  password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                    <label for="passwordsignup" class="youpasswd" >  Password </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO" /> 
                                 </p>
                                 <p class="keeplogin"> 
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<label for="loginkeeping">Keep me logged in</label>
 								</p>
                                 <p class="login button">
-                                    <input type="submit" nama="masuk" value="Login" /> 
+                                    <input type="submit" name="masuk" value="Login" /> 
 								</p>
                                 
                             </form>

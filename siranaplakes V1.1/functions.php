@@ -37,7 +37,7 @@ function register ($data) {
         
         //cek username nik, email, dan username
         $result = mysqli_query($db, "SELECT nik FROM signup_data WHERE nik = '$nik'");
-        $result1 = mysqli_query($db, "SELECT emailsignup FROM signup_data WHERE emailsignup = '$emailsignup' ");
+        $result1 = mysqli_query($db, "SELECT emailsignup FROM signup_data WHERE emailsignup = '$emailsignup'");
         
         if(mysqli_fetch_assoc($result)){
             echo "<script>
@@ -91,7 +91,7 @@ function logout ($data) {
 
 function hapus ($id) {
     global $db;
-    mysqli_query($db, "DELETE id FROM perawat2 WHERE id  = '$id'");
+    mysqli_query($db, "DELETE FROM perawat2 WHERE id_pr  = '$id'");
     return mysqli_affected_rows($db);
 }
 

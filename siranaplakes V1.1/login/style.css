@@ -1,4 +1,11 @@
 
+
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+
+
 /*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
@@ -29,58 +36,11 @@
 
 * {
      box-sizing: border-box !important;
-     
 }
 
 html {
      scroll-behavior: smooth;
 }
-.bagian1 {
-     position: fixed;
-     background-color: #d8e9a8;
-}
-.container {
-     font-size: 15px;
-     max-width: auto;
-     padding: 0 0px;
-     margin: 0px;
-     background-color: #d8e9a8;
-     text-align: center;
-}
-
-.header {
-     height: 80px ;
-     width: 100% ;
-     background-color: #d8e9a8;
-     position: fixed;
-     top: 0;
-     margin-right: 0px;
-     z-index: 10;
-   }
-
-   .header-left {
-     float: left;
-     line-height: 40px;
-     background-color: #d8e9a8;
-     color: #1e5128;
-     font-family: "Square721 BT", sans-serif;
-   }
-   
-   .header-right {
-     float: right;
-     margin-right: 0px;
-     background-color: #d8e9a8;
-   }
-   
-   .header-right a {
-     line-height: 50px;
-     padding: 0 25px;
-     color: #4e9f3d;
-     background-color: #d8e9a8;
-     display: block;
-     float: left;
-     transition: all 0.5s;
-   }
 
 body {
      color: #666666;
@@ -88,8 +48,6 @@ body {
      font-family: 'Poppins', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
-     margin-top: 0px;
-     background-color: #d8e9a8;
 }
 
 a {
@@ -120,7 +78,7 @@ h6 {
 }
 
 h1 {
-     font-size: 20px;
+     font-size: 24px;
 }
 
 h2 {
@@ -249,9 +207,8 @@ button {
 }
 
 .full {
-     float: right;
+     float: left;
      width: 100%;
-     background-color: #d8e9a8;
 }
 
 .layout_padding {
@@ -351,64 +308,16 @@ button {
 
 .header {
      width: 100%;
-     background-color: #D8E9A8;
+     background: #D8E9A8;
      padding: 20px 30px;
 }
 
 .logo a {
-     font-size: 20px;
+     font-size: 40px;
      font-weight: bold;
      text-transform: uppercase;
-     color: #4e9f3d;
-     line-height: 0px;
-}
-
-.letak {
-     background-image: url('../login/images/pattern.png');
-     padding: 50px 10px 200px 0px;
-     background-size: cover;
-     color: #031006;
-     text-align: justify;
-
-}
-.letak b{
-     font-size: 30px;
-}
-.hasil {
-     display: inline-block;
-     overflow: auto;
-     text-decoration:underline;
-     padding: 15px 50px 15px;
-     font-size: 25px;
-     cursor: pointer;
-     text-align: center;
-     text-decoration: none;
-     outline: none;
      color: #fff;
-     background-color: #31C1FF;
-     border: none;
-     border-radius: 15px;
-     margin: 20px auto;
-     font-family: 'Lato';
-     font-weight: 300;
-     width: 500px;
-     text-align: center;
-     margin-left: 30px;
-}
-.third {
-     background: #F1D676;
-     display: inline-block;
-     color: rgb(1, 1, 1);
-     border: none;
-     text-decoration: none;
-     padding: 10px;
-     border-radius: 8px;
-     font-family: 'Lato';
-     margin: 5px;
-     text-transform: uppercase;
-     cursor: pointer;
-     outline: none;
-     box-shadow: 0 8px #999;
+     line-height: 40px;
 }
 
 /** banner section **/
@@ -424,12 +333,11 @@ button {
 
 .text-bg h1 {
      color: #1E5128;
-     font-size: 40px;
+     font-size: 50px;
      line-height: 70px;
      padding-bottom: 15px;
      font-weight: bold;
 }
-
 
 .text-bg p {
      color: #4E9F3D;
@@ -446,16 +354,16 @@ button {
 }
 
 .main_form .contactus {
-     border:double;
+     border: inherit;
      margin-bottom: 70px;
      width: 100%;
      height: 45px;
      background: transparent;
-     color: #1bca2d;
+     color: #fbfaf8;
      font-size: 16px;
      font-weight: 400;
      border-radius: inherit;
-     border-bottom: rgb(68, 150, 41) solid 5px;
+     border-bottom: #fff solid 1px;
 }
 
 .main_form .textarea {
@@ -471,25 +379,9 @@ button {
      padding-top: 35px;
 }
 
-.third {
-     background: #F1D676;
-     display: inline-block;
-     color: rgb(1, 1, 1);
-     border: none;
-     text-decoration: none;
-     padding: 5px;
-     border-radius: 8px;
-     font-family: 'Lato';
-     margin: 5px;
-     text-transform: uppercase;
-     cursor: pointer;
-     outline: none;
-     box-shadow: 0 8px #999;
-}
-
 .main_form .send_btn {
      font-size: 17px;
-     transition: ease-in all 0.3s;
+     transition: ease-in all 0.5s;
      background-color: #000;
      color: #fff;
      padding: 13px 0px;
@@ -509,7 +401,7 @@ button {
 }
 
 #request *::placeholder {
-     color: #1fbf8a;
+     color: #fbfaf8;
      opacity: 1;
 }
 

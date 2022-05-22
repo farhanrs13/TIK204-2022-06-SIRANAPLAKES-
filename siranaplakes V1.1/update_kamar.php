@@ -60,31 +60,35 @@ require 'functions.php';
         <p>Telpon : 065134271</p>
     </b>
     <div class="cari_rs">
-        <a href="halaman_perawat.php"><button class="button">Up Date</button></a>
+        <a href="halaman_perawat.php"><button class="third">Up Date</button></a>
+        <a href="cek_booking.php"><button class="third">Cek Bookingan</button></a>
     </div> 
     <section class="hasil">
 		<tbody>
 			<?php 
-			$result = mysqli_query($db,"SELECT * FROM perawat2 ORDER BY id DESC");
+			$result = mysqli_query($db,"SELECT * FROM perawat2 ORDER BY id_pr DESC");
             $data=[];
 			while(($r = mysqli_fetch_assoc($result))){
                 $data[]=$r;
                 $d2=$data;
                 
 				?>
-                <?php foreach($d2 as $dd):?>
+                <?php foreach($d2 as $dd)
+                if($dd=="info"){
+                    break;
+                }
+                ?>
+
                     
             <b ><?php echo strtoupper($dd['kname']); ?></b>
             <p>Ruang : <?php echo $dd['fname']; ?></p>
             <p>Tersedia Kamar : <?php echo $dd['lname']; ?></p>
             <p>Bad Kosong : <?php echo $dd['hname']; ?></p>
             <p>Info Update : <?php echo $dd['info']; ?></p>
-            <button class="third" onClick="alert('Pilihan Sukses!! SILAHKAN TEKAN DAFTAR')">Pilih</a></button>
-            <a href="hapus.php?id<?= $dd["id"]; ?>"><button class="third" name="hapus" onclick = "return confirm('Yakin Data Akan Dihapus');">HAPUS</a></button></a>
+            <!-- <button class="third" onClick="alert('Pilihan Sukses!! SILAHKAN TEKAN DAFTAR')">Pilih</a></button> -->
+            <a href="hapus.php?id_pr=<?= $dd['id_pr'] ?>"><button class="third" name="hapus" onclick = "return confirm('Yakin Data Akan Dihapus');">HAPUS</a></button></a>
             <br> <hr>
-            <?php endforeach; ?>
             <?php 
-            
 			}
         	?>
 		</tbody>

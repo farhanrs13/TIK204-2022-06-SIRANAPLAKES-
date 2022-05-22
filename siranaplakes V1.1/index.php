@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('User Berhasil Ditambahkan. SILAHKAN MASUK!!');
-        document.location.href = 'halaman_perawat.php';
+        document.location.href = './sir/berhasil.php';
         </script>
         "; 
     } else {
@@ -20,30 +20,29 @@ if (isset($_POST["submit"])) {
 }
 
 if (isset($_POST["masuk"])) { 
-    $username = $_POST["emailsignup"];
-    $password = $_POST["passwordsignup"];
+    $emailsignup = $_POST["emailsignup"];
+    $passwordsignup = $_POST["passwordsignup"];
 
-    $result = mysqli_query($db, "SELECT * FROM signup_data WHERE
-    username='$emailsignup'");
+    $result1 = mysqli_query($db, "SELECT * FROM signup_data WHERE
+    emailsignup = '$emailsignup'");
     
-    //cek username
-    if (mysqli_num_rows($result) == 1 ) {
+    //cek emailsignup
+    if (mysqli_num_rows($result1) === 1 ) {
         //cek pasword
-        $row = mysqli_fetch_assoc($result);
-        if( password_verify($password, $row["password"])) {
-            header("location: update_kamar.php");
+        $row = mysqli_fetch_assoc($result1);
+        if( password_verify($passwordsignup, $row["passwordsignup"])) {
+            header("location:./login/berhasil.php");
             exit;
         }
     }
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['username'] = $row['username'];
-        header("Location: berhasil_login.php");
-    } else {
-        echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
-    }
-
-
+    $error = true;
+    // if ($result->num_rows > 0) {
+    //     $row = mysqli_fetch_assoc($result);
+    //     $_SESSION['emailsignup'] = $row['emailsignup'];
+    //     header("Location: berhasil_login.php");
+    // } else {
+    //     echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+    // }
 
 
 }
@@ -87,26 +86,31 @@ if (isset($_POST["masuk"])) {
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
+                            <?php if( isset($error)) : ?>
+                                <p style="color: red; font-style:italic;">Username/password salah</p>
+                            <?php endif; ?>
+
                             <form  action="" method="post">
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="username" class="uname"  > Your Email </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                    <label for="emailsignup" class="uname"  > Your Email </label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd" > Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                    <label for="passwordsignup" class="youpasswd" > Your password </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO" /> 
                                 </p>
                                 <p class="keeplogin"> 
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<label for="loginkeeping">Keep me logged in</label>
 								</p>
                                 <p class="login button">
-                                    <input type="submit" id="masuk" nama="masuk" value="Login" /> 
+                                    <input type="submit" name="masuk" value="Login" /> 
 								</p> 
                                 <p class="change_link">
 									Belom Memiliki Akun ?
-									<a href="#toregister" class="to_register">Join us</a>
+									<a href="#toregister" class="to_register">Daftar</a>
+									<a href="admin_login.php" class="to_register">Login Admin</a>
 								</p>
                             </form>
                         </div>

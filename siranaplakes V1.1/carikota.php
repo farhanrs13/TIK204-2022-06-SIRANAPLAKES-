@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 if (isset($_POST ["cari"])){
-   header('Location: admin_login.php');
+   header('Location: login.php');
 }
 
 ?>
@@ -96,7 +96,7 @@ if (isset($_POST ["cari"])){
                         </select>                         
                      </div>
                      <div class="col-sm-12">
-                        <button class="send_btn" ><a href="admin_login.php" name="cari" style="color: ivory;">CARI</a>
+                        <button class="send_btn" ><a href="login.php" name="cari" style="color: ivory;">CARI</a>
                         </button>
                      </div>
                   </div>

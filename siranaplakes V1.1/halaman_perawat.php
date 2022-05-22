@@ -3,7 +3,7 @@ require 'functions.php';
 require 'time.js';
 if (isset($_POST["submit"])) { 
 
-    if( tambahan ($_POST) > 0 ) {
+    if( tambahan($_POST) > 0 ) {
         echo "
         <script>
         alert('data berhasil ditambah!');
@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <title>SIRANAPLAKES</title>
     <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -38,7 +38,7 @@ if (isset($_POST["submit"])) {
     <link rel="icon" href="images/siranaplakes.png" type="image/png"/>
   </head>
   <header>
-        <div class="header" style=" box-shadow: 0 1px #999;">
+        <div class="header" style=" box-shadow: 0 1px #999; background-color: #d8e9a8;">
             <div class="container">
               <div class="row">
                     <div class="full">
@@ -60,10 +60,10 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
       </header>
-      
-  <div class="top-wrapper">
+<center>
+  <div class="letak">
     <div class="container">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <form action="" method="post">
         <br /> <br> <br><br>
         <label for="kname">Kelas:</label><br>
@@ -74,10 +74,15 @@ if (isset($_POST["submit"])) {
         <input type="text" id="lname" required="required" name="lname" /><br /><br />
         <label for="lname">Bed Kosong:</label><br>
         <input type="text" id="hname" required="required" name="hname" /><br /><br />
-        <label for="lname">Info Di Update Jam : <div id="jam" name='jam'></div></label><br>
+        <label for="info">Info Di Update :</label><br>
+        <input type="text" id="info" name="info" /><br /><br />
+        <button style="background-color:darkseagreen; border-radius:15px; width:100px;">
+        <p>Jam:</p>
+          <div id="jam" name='jam'></div>
+        </button><br>
         <type="text" id="info" name="info" />
-        <input class="klik" type="submit" name="submit" value="Submit" />
-        <input class="klik" type="reset" />
+        <input class="third" type="submit" name="submit" value="Submit" />
+        <input class="third" type="reset" />
       </form>
       <div class="btn-wrapper">
       <div class="box1">
@@ -86,7 +91,7 @@ if (isset($_POST["submit"])) {
         <br><br>
 
       </div>
-
+      </center>   
     </div>
     </div>
     </div>
