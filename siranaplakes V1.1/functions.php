@@ -5,6 +5,13 @@ if (!$db) {
 	die ('Gagal terhubung kedatabases: ' . mysqli_connect_error());	
 }
 
+// function prov ($data) {
+//     global $db;
+//     $sql= mysqli_query("SELECT * FROM provinsi");
+//     while ($data = mysqli_fetch_array($sql)) {
+//     }
+// }
+
 
 function tambahan ($data) {
     global $db;

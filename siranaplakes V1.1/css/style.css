@@ -395,6 +395,24 @@ button {
      text-align: center;
      margin-left: 30px;
 }
+.hasill {
+     display: inline-block;
+     overflow: auto;
+     text-decoration:underline;
+     padding: 15px 50px 15px;
+     font-size: 25px;
+     cursor: pointer;
+     text-decoration: none;
+     outline: none;
+     color: #fff;
+     background-color:#52c35daa;
+     border: none;
+     border-radius: 15px;
+     font-family: 'Lato';
+     font-weight: 300;
+     width: 500px;
+     margin-left: 30px;
+}
 .third {
      background: #F1D676;
      display: inline-block;

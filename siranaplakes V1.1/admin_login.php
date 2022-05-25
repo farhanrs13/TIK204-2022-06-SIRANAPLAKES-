@@ -48,7 +48,7 @@ if (isset($_POST["masuk"])) {
                 <div class="clr"></div>
             </div>
             <header>
-                <h1>Login Account Admin</h1>
+                <h1>Login Account Perawat</h1>
                 <span>SIRANAPLAKES</span>
 				<nav class="codrops-demos">
 					<span><strong>Sistem Informasi Ruang Rawat Inap Layanan Kesehatan</strong></span>
@@ -64,7 +64,7 @@ if (isset($_POST["masuk"])) {
                                 <p style="color: red; font-style:italic;">Username/password salah</p>
                             <?php endif; ?>
                             <form  action="" method="post">
-                                <h1>Admin</h1> 
+                                <h1>Perawat</h1> 
                                 <p> 
                                     <label for="emailsignup" class="uname"  > Join Account Rumah Sakit </label>
                                     <input id="emailsignup" name="emailsignup" required="required" type="text" placeholder="myusername or mymail@mail.com"/>

@@ -1,0 +1,16 @@
+body {
+    background-image: url(images/pattern.png);
+    
+}
+
+.bc {
+    background-color: #4E9F3D;
+    border-radius: 15px;
+
+
+}
+.lb {
+    color:white;
+    padding: 10px;
+    border-radius: 30px;
+}

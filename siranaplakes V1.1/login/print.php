@@ -65,10 +65,8 @@ require '../functions.php';
                 </form>
                 
                 <center><img style="width:150px; padding:10px;" src="./images/barcode2.png" alt=""></center>
-                
-                
+                <a href="../login.php" >Keluar</a>
             </div>
-            
         </div>
     </section>
         <script>

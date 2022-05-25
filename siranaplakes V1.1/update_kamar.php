@@ -39,11 +39,11 @@ require 'functions.php';
                         <div class="container">
                             <span class="fa fa-bars menu-icon"></span>
                             <div class="header-right">
-                                <a href="404.html">About us</a>
-                                <a href="index.php" class="login">Log out</a>
-                                <a href="404.html">Contact</a>
+                                <a href="404.html">Data Pasien</a>
+                                <a href="hub.php">Hubungi Kami</a>
+                                <a href="logout.php" class="login">Log out</a>
                             </div>
-                            <img src="images/siranaplakes.png"style="width: 60px;px;height:60px; float: left;" aligh="middle" alt="#" >
+                            <img src="login/images/siranaplakes.png"style="width: 60px;px;height:60px; float: left;" aligh="middle" alt="#" >
                             
                         </div>
                     </body>

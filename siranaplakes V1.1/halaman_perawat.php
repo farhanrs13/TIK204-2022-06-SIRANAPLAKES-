@@ -35,10 +35,10 @@ if (isset($_POST["submit"])) {
     <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="responsive.css" />
-    <link rel="icon" href="images/siranaplakes.png" type="image/png"/>
+    <link rel="icon" href="login/images/siranaplakes.png" type="image/png"/>
   </head>
   <header>
-        <div class="header" style=" box-shadow: 0 1px #999; background-color: #d8e9a8;">
+        <div class="header" style=" box-shadow: 0 0.5px #999;">
             <div class="container">
               <div class="row">
                     <div class="full">
@@ -46,12 +46,12 @@ if (isset($_POST["submit"])) {
                         <div class="container">
                               <span class="fa fa-bars menu-icon"></span>
                               <div class="header-right">
-                                <a href="404.html">About us</a>
-                                <a href="index.php" class="login">Log out</a>
-                                <a href="404.html">Contact</a>
+                              <a href="ulul/cekdata.php">Data Pasien</a>
+                                <a href="hub.php">Hubungi Kami</a>
+                                <a href="logout.php" class="login">Log out</a>
                               </div>
                               <div class="top-wrapper">
-                              <img src="images/siranaplakes.png" style="width: 60px;height:60px; float: left;" aligh="middle" alt="#" >
+                              <img src="login/images/siranaplakes.png" style="width: 60px;height:60px; float: left;" aligh="middle" alt="#" >
                               </div>
                         </div>
                     </body>
@@ -62,10 +62,11 @@ if (isset($_POST["submit"])) {
       </header>
 <center>
   <div class="letak">
-    <div class="container">
+    <div class="cont">
+      <div class="hasill">
     <div class="col-md-12">
       <form action="" method="post">
-        <br /> <br> <br><br>
+        <br>
         <label for="kname">Kelas:</label><br>
         <input type="text" id="kname"required="required" name="kname" /> <br /><br />
         <label for="fname">Nama Kelas Rawat:</label><br>
@@ -77,7 +78,7 @@ if (isset($_POST["submit"])) {
         <label for="info">Info Di Update :</label><br>
         <input type="text" id="info" name="info" /><br /><br />
         <button style="background-color:darkseagreen; border-radius:15px; width:100px;">
-        <p>Jam:</p>
+        <h5>Jam:</h5>
           <div id="jam" name='jam'></div>
         </button><br>
         <type="text" id="info" name="info" />
@@ -90,6 +91,7 @@ if (isset($_POST["submit"])) {
         </body>
         <br><br>
 
+      </div>
       </div>
       </center>   
     </div>

@@ -18,16 +18,16 @@ require '../functions.php';
 <link rel="icon" href="images/siranaplakes.png" type="image/png"/>
 </head>
 <body>
-    <header >
-    <div class="cont" >
-        <span class="fa fa-bars menu-icon" ></span>
-        <div class="header-left" >
+    <header style=" box-shadow: 0 0.5px #999;">
+    <div class="container" >
+        <span class="fa fa-bars menu-icon"></span>
+        <div class="header-left">
         <img class="logo" src="images/siranaplakes1.png" style="width: 60px;height:60px; float: left; padding-left: 0%;"  alt="#">
         </div>
-        <div class="header-right" >
-        <a  href="#">Data Rumah Sakit</a>
-        <a href="#">Data Pasien</a>
-        <a href="../index.php" class="login">Logout</a>
+        <div class="header-right" style="margin: 30px; padding:10px;">
+        <a style="color:green; font-size: 20px; padding-right: 30px;" href="../index.php">Beranda</a>
+        <a style="color:green; font-size: 20px; padding-right: 30px;" href="../hub.php">Hubungi Kami</a>
+        <a style="color:green; font-size: 20px;" href="../login.php" class="login">Log out</a>
         </div>
     </div>
     </header>
@@ -76,7 +76,7 @@ require '../functions.php';
                         }
                         ?>
                         <center style="padding: 30px;">
-                            <a class="akhir" style="padding: 20px 50px; transition:all 0.5s" href="../index.php" onclick = "return confirm('Yakin Ingin Membatalkan Pilihan??');">Keluar</a>
+                            <a class="akhir" style="padding: 20px 50px; transition:all 0.5s" href="./data_pribadi.html" onclick = "return confirm('Yakin Ingin Membatalkan Pilihan??');">Batal</a>
                             <a class="akhir" style="background-color:lawngreen; padding:20px 50px; " href="print.php" onclick = "return confirm('Booking Anda Success!');">Booking</a>
                         </center>
                     </div>

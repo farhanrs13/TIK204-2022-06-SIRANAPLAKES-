@@ -1,156 +1,116 @@
 <?php
 require 'functions.php';
-if (isset($_POST["submit"])) { 
-
-
-    if( register ($_POST) > 0 ) {
-        echo "
-        <script>
-        alert('User Berhasil Ditambahkan. SILAHKAN MASUK!!');
-        document.location.href = './sir/berhasil.php';
-        </script>
-        "; 
-    } else {
-        echo"<script>
-        alert('User Gagal Ditambahkan!!');
-        </script>
-        ";
-    }
-
+if (isset($_POST ["cari"])){
+   // header('Location: login.php');
 }
 
-if (isset($_POST["masuk"])) { 
-    $emailsignup = $_POST["emailsignup"];
-    $passwordsignup = $_POST["passwordsignup"];
-
-    $result1 = mysqli_query($db, "SELECT * FROM signup_data WHERE
-    emailsignup = '$emailsignup'");
-    
-    //cek emailsignup
-    if (mysqli_num_rows($result1) === 1 ) {
-        //cek pasword
-        $row = mysqli_fetch_assoc($result1);
-        if( password_verify($passwordsignup, $row["passwordsignup"])) {
-            header("location:./login/berhasil.php");
-            exit;
-        }
-    }
-    $error = true;
-    // if ($result->num_rows > 0) {
-    //     $row = mysqli_fetch_assoc($result);
-    //     $_SESSION['emailsignup'] = $row['emailsignup'];
-    //     header("Location: berhasil_login.php");
-    // } else {
-    //     echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
-    // }
-
-
+$db = mysqli_connect("localhost", "root", "", "siranaplakes2");
+if (!$db) {
+	die ('Gagal terhubung kedatabases: ' . mysqli_connect_error());	
 }
+//array kota
+$aceh =["Banda Aceh", "Lhokseumawe", "Bireun", "Meulaboh",];
+$sumut = ["Asahan", "Batu Bara", "Karo", "Mandailing Natal"];
+$sumbar =["	Kabupaten Agam", "Dharmasraya", "Pasaman Barat", "Sijunjung"];
+$riau =["Bengkalis", "Indragiri Hilir", "Kampar", "Pelalawan"];
 
+//array kecamatan /kab.aceh
+$banda=["Baiturrahman", "Banda Raya", "Kuta Alam", "Lueng Bata"];
+$lhokseumawe =["Banda sakti", "Muara Dua", "Dewantara", "Muara Batu"];
+//array kecamatan sumut
+$asahan =["Gedangan", "Pulo Bandring", "Suka Damai", "Taman Sari"];
 ?>
 
-
-
 <!DOCTYPE html>
-
-<html lang="en" class="no-js">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Login and Registration</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css login/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css login/style.css" />
-		<link rel="stylesheet" type="text/css" href="css login/animate-custom.css" />
-        <link rel="icon" href="images/siranaplakes.png" type="image/png"/>
-        
-    </head>
-    <body>
-        <div class="container">
-            <div class="codrops-top">
-                <div class="clr"></div>
-            </div>
-            <header>
-                <h1>Login and Registration</h1>
-                <span>SIRANAPLAKES</span>
-				<nav class="codrops-demos">
-					<span><strong>Sistem Informasi Ruang Rawat Inap Layanan Kesehatan</strong></span>
-				</nav>
-            </header>
-            <section>				
-                <div id="container_demo" >
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <?php if( isset($error)) : ?>
-                                <p style="color: red; font-style:italic;">Username/password salah</p>
-                            <?php endif; ?>
-
-                            <form  action="" method="post">
-                                <h1>Log in</h1> 
-                                <p> 
-                                    <label for="emailsignup" class="uname"  > Your Email </label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup" class="youpasswd" > Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-                                </p>
-                                <p class="keeplogin"> 
-									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-									<label for="loginkeeping">Keep me logged in</label>
-								</p>
-                                <p class="login button">
-                                    <input type="submit" name="masuk" value="Login" /> 
-								</p> 
-                                <p class="change_link">
-									Belom Memiliki Akun ?
-									<a href="#toregister" class="to_register">Daftar</a>
-									<a href="admin_login.php" class="to_register">Login Admin</a>
-								</p>
-                            </form>
-                        </div>
-
-                        <div id="register" class="animate form">
-                            <form  action="" method="post"> 
-                                <h1> Sign up </h1> 
-                                <p> 
-                                    <label for="nik" class="nik" data-icon="u">NIK Anda</label>
-                                    <input id="nik" name="nik" required="required" type="int" placeholder="1110110230948764"/>
-                                <p>
-                                <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-                                </p>
-                                <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
-                                </p>
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p class="signin button">
-									<input type="submit" name="submit" value="Sign up"/> 
-								</p>
-                                <p class="change_link">  
-									Sudah Mempunyai Akun ?
-									<a href="login.php" class="to_register"> Go and log in </a>
-								</p>
-                            </form>
-                        </div>
-						
-                    </div>
-                </div>  
-            </section>
-            
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIRANAPLAKES</title>
+<link href="" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="login/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="responsive.css">
+<link rel="shortcut icon" href="favicon.ico" >
+<link rel="icon" href="login/images/siranaplakes.png" type="image/png"/>
+</head>
+<body>
+<header style=" box-shadow: 0 0.5px #999;">
+    <div class="container" >
+        <span class="fa fa-bars menu-icon"></span>
+        <div class="header-left">
+        <img class="logo" src="login/images/siranaplakes1.png" style="width: 60px;height:60px; float: left; padding-left: 0%;"  alt="#">
         </div>
-    </body>
+        <div class="header-right" style="margin: 30px; padding:10px;">
+        <a style="color:green; font-size: 20px; " href="#">Beranda</a>
+        <a style="color:green; font-size: 20px;" href="#">Hubungi Kami</a>
+        <a style="color:green; font-size: 20px;" href="../index.php" class="login">Login</a>
+        </div>
+    </div>
+    </header>
+<div class="top-wrapper">
+    <div class="container">
+    <h1>Sistem Informasi Ruang Rawat Inap Layanan Kesehatan</h1> <br>
+    <p> Aplikasi Website Pengecek Ketersedian Ruang Rawat Inap Secara Realtime di Pelayanan Kesehatan Sekitar Anda.</p>
+    <div class="top-wrapp">
+        <section class="banner_main">
+        <div class="contain">
+        <div class="row d_flex">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6  col-md-12" >
+            <form id="request" action="" method="post" class="main_form">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <h3>Pilih Provinsi</h3>
+                        <select class="contactus" placeholder="Pilih Provinsi" type="type" name="Provinsi" style="color: 	#000000aa; font-size: 18px; letter-spacing: 1px; font-family: Roboto, Helvetica, Arial, sans-serif;">
+                        <option value="0000"disabled selected>-- PILIH --</option>
+                        <?php
+                            $sql= mysqli_query($db, "SELECT * FROM provinsi");
+                            $data=[];
+                            while(($v = mysqli_fetch_assoc($sql))){
+                            $data[]=$v;
+                            $d3=$data;
+
+                            ?>
+                            <?php foreach($d3 as $p) ?>
+
+                            <option value=""><?php echo $p['provinsi']; ?></option>
+                            <?php 
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-md-6" >
+                        <h3>Pilih Kabupaten/Kota</h3>
+                        <select class="contactus"  type="type" name="Kabupaten/Kota" style="color: 	#000000aa; font-size: 18px; letter-spacing: 1px; font-family: Roboto, Helvetica, Arial, sans-serif;">
+                        <option  value="0000" disabled selected >-- PILIH --</option>
+                        <?php for($a=0; $a < 4 ; $a++) {?>
+                        <option value="4444"><?php echo $aceh[$a]; ?></option>
+                        <?php } ?>
+
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Pilih Kecamatan</h3>
+                        <select class="contactus" placeholder="Pilih Kecamatan" type="type" name="Kecamatan" style="color: 	#000000aa; font-size: 18px; letter-spacing: 1px; font-family: Roboto, Helvetica, Arial, sans-serif;">
+                        <option value="0000"disabled selected>-- PILIH --</option>
+                        <?php for($a=0; $a < 4 ; $a++) {?>
+                        <option value="4444"><?php echo $banda[$a]; ?></option>
+                        <?php } ?>
+                        </select>                         
+                    </div>
+                    <div class="btn-wrapper">
+                        <button class="btn signup" style="width: 100%; border: transparent; border-radius: 15px; padding: 15px;" ><a href="login.php" name="cari" style=" width: 100%; color:white;">CARI RUMAH SAKIT</a>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </section>
+    </div>
+</div>
+</footer>
+</body>
 </html>
+
