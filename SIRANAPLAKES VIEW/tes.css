@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+    background-color: #ccc;
+    height: 100px;
+    padding: 5px;
+}
+
+#menu {
+    background-color: darkcyan;
+    height: 100px;
+    padding: 5px;
+}
+
+#sidebar {
+    width: 1000px;
+    height: 300px;
+    padding: 5px;
+    float: left;
+    background-color: gray;
+}
+
+#konten {
+    float: left;
+    padding: 5px;
+}
+
+#footer {
+    color: white;
+    height: 100px;
+    padding: 5px;
+    background-color: black;
+    clear: both;
+}
