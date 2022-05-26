@@ -1,0 +1,22 @@
+.container {
+    margin: 30px;
+    
+}
+h2 {
+    text-align: center;
+    color: forestgreen;
+}
+.tengah {
+    text-align: center;
+    color:darkgreen;
+    width: 80px;
+    margin-left: 50%;
+    border-bottom: 20px;
+    bottom: unset;
+    
+    
+}
+button {
+    background-color:lightgreen;
+    size: 40px;
+}
